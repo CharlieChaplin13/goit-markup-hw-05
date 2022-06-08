@@ -16,6 +16,11 @@
     --icon-color: #AFB1B8;
 
     --border-color: #EEEEEE;
+
+    /* переменные анимации и переходов */
+    --hover-transition-duration: 250ms;
+    --hover-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
     
 }
 
@@ -141,6 +146,8 @@ header {
 .site-nav-link:focus, 
 .site-nav-link.current{
     color: var(--accent-color);
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }   
 
 .auth-nav {
@@ -168,6 +175,8 @@ header {
 .auth-nav-link:hover, 
 .auth-nav-link:focus  {
     color: var(--accent-color); 
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 .auth-nav-icon {
@@ -179,6 +188,8 @@ header {
 .auth-nav-icon:hover,
 .auth-nav-icon:focus {
     fill: currentColor;
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 /* Баннер (блог-герой) */
@@ -232,6 +243,56 @@ header {
 .hero-button:hover, 
 .hero-button:focus {
     background-color: var(--button-hover-color);
+    /* transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function); */
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* opacity: 1; */
+}
+
+.backdrop.is-hidden {
+    opacity: 1;
+    pointer-events: none;
+}  
+
+.hero-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 581px;
+    width: 528px;
+
+    background-color: var(--primary-bg-color);   
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+    color: var(--logo-text-color);
+    background-color: var(--primary-bg-color);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer; 
+}
+
+.close-button:hover, 
+.close-button:focus {
+    border-color: var(--button-hover-color);
+    color: var(--button-hover-color);
+
 }
 
 /* Особенности */
@@ -271,6 +332,7 @@ header {
 .features-text {
     font-size: 14px;
     line-height: 1.71;
+    
 }
 
 /* Чем мы занимаемся */
@@ -284,6 +346,19 @@ header {
 
 .work-list .item + .item {
     margin-left: 30px;
+}
+
+.work-list-thumb {
+    background-color: rgba(47, 48, 58, 0.8);
+    width: 100%;
+    height: 70px;
+    text-align: center;
+}
+
+.work-list-title {
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+    
 }
 
 /* Наша команда */
@@ -355,6 +430,8 @@ header {
 .messenger-link:focus {
     color: var(--primary-bg-color);
     background-color: var(--accent-color);
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
     
 }
 
@@ -391,12 +468,16 @@ header {
 .client-link:focus {
     border-color: var(--accent-color);
     color: var(--accent-color);
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 .client .icon:hover,
 .client .icon:focus {
     fill: currentColor;
     border-color: inherit;
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 /* Футер */
@@ -443,6 +524,8 @@ header {
 .address-nav-link:hover, 
 .address-nav-link:focus {
     color: var(--accent-color);
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 .join-container {
@@ -482,6 +565,8 @@ header {
 .join-link:hover,
 .join-link:focus {
     background-color: var(--accent-color);
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 .join-icon {
@@ -523,6 +608,8 @@ header {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
                 0px 1px 2px rgba(0, 0, 0, 0.08), 
                 0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 /* Наши работы */
@@ -548,6 +635,8 @@ header {
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16),
                 0px 4px 4px rgba(0, 0, 0, 0.06),
                 0px 1px 1px rgba(0, 0, 0, 0.12);
+    transition-duration: var(--hover-transition-duration);
+    transition-timing-function: var(--hover-transition-timing-function);
 }
 
 .examples-card {
